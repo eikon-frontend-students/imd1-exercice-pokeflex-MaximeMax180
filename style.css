@@ -27,5 +27,332 @@
  *   .stat-row-flex      -> Une ligne de statistique (label + valeur)
  *
  * Bon courage ! 🎨
- * =====================================================
- */
+
+
+/* =====================================================
+    BASE
+   ===================================================== */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("back.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #0e3644e1;
+}
+
+.header-title {
+  text-align: center;
+}
+
+/* =====================================================
+    SEARCH SECTION
+   ===================================================== */
+
+.search-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -25px 0 25px 0;
+}
+
+.search-input-flex input {
+  width: 580px;
+  height: 50px;
+  padding: 0 20px;
+
+  font-size: 26px;
+  font-family: "Press Start 2P", cursive;
+
+  border-radius: 15px;
+  border: 2.8px solid lch(55.24% 29.08 264.93);
+  outline: none;
+
+  color: rgba(32, 67, 84, 0.603);
+  background-color: #5cbbde;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    inset 24px 24px 48px #b0ebec,
+    inset -24px -24px 48px #8fa6c7;
+}
+
+.search-input-flex button {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  padding: 18px 28px;
+  font-size: 18px;
+  font-family: "Press Start 2P", cursive;
+
+  border-radius: 20px;
+  border: 2.8px solid #6f1b1b;
+
+  background-color: #a92020;
+  color: #e6e6e6;
+
+  transition: all 2s ease;
+
+  box-shadow:
+    inset 24px 24px 48px #f63f3f,
+    inset -24px -24px 48px #a81919;
+}
+
+.search-input-flex button:hover {
+  background-color: #b10000;
+  color: #e4e4e4;
+
+  transform-origin: center;
+  animation: swing 0.6s ease-in-out infinite alternate;
+
+  box-shadow:
+    inset 24px 24px 48px #6a0505ac,
+    inset -24px -24px 48px #d11d1d;
+
+  transition: background-color 3s ease;
+}
+
+.search-input-flex button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgb(1, 27, 75);
+}
+
+.search-helper {
+  font-size: 15px;
+}
+
+/* =====================================================
+   CARDS CONTAINER
+   ===================================================== */
+
+.cards-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  margin-top: 50px;
+}
+
+/* =====================================================
+    CARD
+   ===================================================== */
+
+.card-flex {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  max-width: 100%;
+  min-height: 750px;
+
+  padding: 20px 25px;
+  margin: -40px 0 15px 0;
+
+  border-radius: 15px;
+  border: 2.8px solid #197c95c8;
+
+  background: #8bbfce;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  box-shadow:
+    0 10px 55px rgba(22, 55, 73, 0.783),
+    inset 50px 50px 100px #7fc8d5,
+    inset -50px -50px 100px #3a718675;
+}
+
+.card-flex:hover {
+  transform: translateY(-10px) rotate(-2deg) scale(1.05);
+
+  background: linear-gradient(
+    45deg,
+    rgb(255, 137, 19),
+    rgb(255, 169, 58),
+    rgb(116, 121, 255),
+    rgb(110, 236, 255),
+    rgb(76, 108, 222),
+    rgb(219, 95, 201),
+    rgb(255, 136, 16)
+  );
+  background-size: 400% 400%;
+  animation: rainbow 5s linear infinite;
+
+  box-shadow:
+    0 15px 40px rgba(20, 65, 76, 0.803),
+    0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* =====================================================
+    IMAGE
+   ===================================================== */
+
+.card-image-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 680px;
+  padding: 15px;
+
+  border-radius: 10px;
+  border: 2.8px solid #2b7e93b0;
+
+  background: #a3d8e7;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  box-shadow:
+    inset 50px 50px 100px #a2eaf7,
+    inset -50px -50px 100px #53b5d9a1;
+}
+
+.card-image-flex:hover {
+  background: linear-gradient(
+    45deg,
+    rgb(149, 73, 255),
+    rgb(148, 252, 230),
+    rgb(255, 129, 225),
+    rgb(255, 183, 49),
+    rgb(76, 147, 222),
+    rgb(219, 95, 201),
+    rgb(16, 168, 155)
+  );
+  background-size: 400% 400%;
+  animation: rainbow 5s linear infinite;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.card-image-flex:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  pointer-events: none;
+
+  animation: sparkles 2s linear infinite;
+}
+
+/* =====================================================
+    CARD CONTENT
+   ===================================================== */
+
+.card-info-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+
+  width: 100%;
+  white-space: nowrap;
+}
+
+.card-info-flex > :nth-child(2) {
+  order: 3;
+}
+.card-info-flex > :nth-child(3) {
+  order: 2;
+}
+
+.card-types-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  color: #0e3644ca;
+}
+
+.card-types-flex > .type-badge {
+  padding: 2px 6px;
+  margin: -20px 0 10px 0;
+
+  border-radius: 4px;
+  font-size: 0.8rem;
+
+  word-break: break-word;
+}
+
+.card-stats-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* =====================================================
+    ANIMATIONS
+   ===================================================== */
+
+@keyframes swing {
+  0% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+}
+
+@keyframes sparkles {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
